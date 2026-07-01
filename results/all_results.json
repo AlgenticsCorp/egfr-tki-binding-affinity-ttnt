@@ -1,0 +1,245 @@
+{
+  "v1_0": {
+    "n": 11,
+    "rho": -0.664,
+    "pval": 0.026,
+    "ci_lo": -0.876,
+    "ci_hi": -0.151,
+    "pairs": [
+      {
+        "profile": "Ex19del",
+        "drug": "erlotinib",
+        "ddg": -0.417,
+        "ttnt": 4.83,
+        "n": 216
+      },
+      {
+        "profile": "Ex19del",
+        "drug": "osimertinib",
+        "ddg": -5.05,
+        "ttnt": 11.2,
+        "n": 461
+      },
+      {
+        "profile": "G719X",
+        "drug": "osimertinib",
+        "ddg": -1.334,
+        "ttnt": 2.83,
+        "n": 14
+      },
+      {
+        "profile": "L858R+T790M",
+        "drug": "osimertinib",
+        "ddg": -2.693,
+        "ttnt": 7.92,
+        "n": 20
+      },
+      {
+        "profile": "G719X+S768I",
+        "drug": "osimertinib",
+        "ddg": -1.986,
+        "ttnt": 6.21,
+        "n": 18
+      },
+      {
+        "profile": "G719X+L861Q",
+        "drug": "osimertinib",
+        "ddg": -2.149,
+        "ttnt": 29.67,
+        "n": 6
+      },
+      {
+        "profile": "G719X+L861Q",
+        "drug": "afatinib",
+        "ddg": -5.189,
+        "ttnt": 9.49,
+        "n": 5
+      },
+      {
+        "profile": "Ex19del+T790M",
+        "drug": "osimertinib",
+        "ddg": -5.703,
+        "ttnt": 8.97,
+        "n": 57
+      },
+      {
+        "profile": "Ex19delV3",
+        "drug": "osimertinib",
+        "ddg": 7.0283,
+        "ttnt": 5.49,
+        "n": 5
+      },
+      {
+        "profile": "Ex19delV4",
+        "drug": "osimertinib",
+        "ddg": 0.4388,
+        "ttnt": 7.66,
+        "n": 6
+      },
+      {
+        "profile": "Ex19delV5",
+        "drug": "osimertinib",
+        "ddg": 3.8473,
+        "ttnt": 7.48,
+        "n": 5
+      }
+    ]
+  },
+  "v1_0_osi": {
+    "n": 9,
+    "rho": -0.7,
+    "pval": 0.036,
+    "ci_lo": -0.948,
+    "ci_hi": -0.158
+  },
+  "v3_0": {
+    "n": 15,
+    "rho": -0.632,
+    "pval": 0.011,
+    "ci_lo": -0.824,
+    "ci_hi": -0.231
+  },
+  "v3_0_osi": {
+    "n": 11,
+    "rho": -0.582,
+    "pval": 0.06,
+    "ci_lo": -0.854,
+    "ci_hi": 0.0
+  },
+  "loo_v1_0": [
+    {
+      "removed": "Ex19del + erlotinib",
+      "n": 10,
+      "rho": -0.697,
+      "pval": 0.025,
+      "delta_rho": -0.033
+    },
+    {
+      "removed": "Ex19del + osimertinib",
+      "n": 10,
+      "rho": -0.636,
+      "pval": 0.048,
+      "delta_rho": 0.027
+    },
+    {
+      "removed": "G719X + osimertinib",
+      "n": 10,
+      "rho": -0.697,
+      "pval": 0.025,
+      "delta_rho": -0.033
+    },
+    {
+      "removed": "L858R+T790M + osimertinib",
+      "n": 10,
+      "rho": -0.6,
+      "pval": 0.067,
+      "delta_rho": 0.064
+    },
+    {
+      "removed": "G719X+S768I + osimertinib",
+      "n": 10,
+      "rho": -0.636,
+      "pval": 0.048,
+      "delta_rho": 0.027
+    },
+    {
+      "removed": "G719X+L861Q + osimertinib",
+      "n": 10,
+      "rho": -0.673,
+      "pval": 0.033,
+      "delta_rho": -0.009
+    },
+    {
+      "removed": "G719X+L861Q + afatinib",
+      "n": 10,
+      "rho": -0.636,
+      "pval": 0.048,
+      "delta_rho": 0.027
+    },
+    {
+      "removed": "Ex19del+T790M + osimertinib",
+      "n": 10,
+      "rho": -0.636,
+      "pval": 0.048,
+      "delta_rho": 0.027
+    },
+    {
+      "removed": "Ex19delV3 + osimertinib",
+      "n": 10,
+      "rho": -0.636,
+      "pval": 0.048,
+      "delta_rho": 0.027
+    },
+    {
+      "removed": "Ex19delV4 + osimertinib",
+      "n": 10,
+      "rho": -0.685,
+      "pval": 0.029,
+      "delta_rho": -0.021
+    },
+    {
+      "removed": "Ex19delV5 + osimertinib",
+      "n": 10,
+      "rho": -0.685,
+      "pval": 0.029,
+      "delta_rho": -0.021
+    }
+  ],
+  "genie_replication": {
+    "n": 7,
+    "rho": 0.357,
+    "pval": 0.432,
+    "pairs": [
+      {
+        "profile": "Ex19del",
+        "drug": "erlotinib",
+        "ddg": -0.417,
+        "ttnt": 9.424342105263161,
+        "n": 64
+      },
+      {
+        "profile": "Ex19del",
+        "drug": "osimertinib",
+        "ddg": -5.05,
+        "ttnt": 4.851973684210525,
+        "n": 76
+      },
+      {
+        "profile": "Ex19del+T790M",
+        "drug": "osimertinib",
+        "ddg": -5.703,
+        "ttnt": 5.26315789473684,
+        "n": 41
+      },
+      {
+        "profile": "Ex19delV3",
+        "drug": "osimertinib",
+        "ddg": 7.0283,
+        "ttnt": 5.49342105263158,
+        "n": 5
+      },
+      {
+        "profile": "Ex19delV5",
+        "drug": "osimertinib",
+        "ddg": 3.8473,
+        "ttnt": 7.483552631578931,
+        "n": 5
+      },
+      {
+        "profile": "G719X",
+        "drug": "osimertinib",
+        "ddg": -1.334,
+        "ttnt": 2.76315789473684,
+        "n": 5
+      },
+      {
+        "profile": "L858R+T790M",
+        "drug": "osimertinib",
+        "ddg": -2.693,
+        "ttnt": 7.53289473684211,
+        "n": 24
+      }
+    ]
+  },
+  "supplementary_table4_line_confounding": null
+}

@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Patient-level data (excluded — download from Synapse syn27056697)
+data/genie_bpc_cohort.csv
+
+# Jupyter
+.ipynb_checkpoints/
