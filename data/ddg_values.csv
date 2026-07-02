@@ -1,0 +1,19 @@
+profile,drug,ddg_kcal_mol,notes
+Ex19del,erlotinib,-0.417,v1.0 binding-pocket scope
+Ex19del,osimertinib,-5.050,v1.0 binding-pocket scope
+L858R,erlotinib,0.018,v3.0 all-sensitising scope only
+L858R,osimertinib,-2.586,v3.0 all-sensitising scope only
+G719X,osimertinib,-1.334,v1.0 binding-pocket scope
+G719X,afatinib,-5.033,excluded (n=4 < minimum threshold)
+L861Q,osimertinib,-5.505,v3.0 all-sensitising scope only
+L861Q,afatinib,-7.251,v3.0 all-sensitising scope only
+L858R+T790M,osimertinib,-2.693,v1.0 binding-pocket scope
+G719X+S768I,osimertinib,-1.986,v1.0 binding-pocket scope
+G719X+L861Q,osimertinib,-2.149,v1.0 binding-pocket scope
+G719X+L861Q,afatinib,-5.189,v1.0 binding-pocket scope
+Ex19del+T790M,osimertinib,-5.703,v1.0 binding-pocket scope
+C797S+Ex19del+T790M,osimertinib,-3.813,excluded (treatment-appropriateness)
+S768I,osimertinib,-0.054,excluded (structural distance 11.64 Å)
+Ex19delV3,osimertinib,7.028,v1.0 binding-pocket scope (GENIE BPC source)
+Ex19delV4,osimertinib,0.439,v1.0 binding-pocket scope (GENIE BPC source)
+Ex19delV5,osimertinib,3.847,v1.0 binding-pocket scope (GENIE BPC source)

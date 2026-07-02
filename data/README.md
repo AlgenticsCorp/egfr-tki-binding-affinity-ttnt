@@ -2,12 +2,15 @@
 
 ## What is included in this repository
 
-| File | Description | Source |
-|---|---|---|
-| `merged_ddg_ttnt.csv` | Profile-level ΔΔG (from docking) and median TTNT (from MSK-CHORD KM), n=19 rows | Computed — see analysis script |
-| `genie_bpc_profile_summary.csv` | Profile-level median TTNT from GENIE BPC NSCLC v2.0-public, n=34 rows | Computed from GENIE BPC (see below) |
+| File | Description | License | Source |
+|---|---|---|---|
+| `ddg_values.csv` | ΔΔG binding affinity values for all mutation–TKI pairs (authors' own computations) | MIT | Algentics Research |
+| `merged_ddg_ttnt.csv` | Profile-level ΔΔG + KM-median TTNT (from MSK-CHORD), n=19 rows | CC BY-NC-ND 4.0 | Computed from MSK-CHORD 2024 |
+| `genie_bpc_profile_summary.csv` | Profile-level median TTNT from GENIE BPC NSCLC v2.0-public, n=33 rows | CC BY-NC-ND 4.0 | Computed from GENIE BPC (see below) |
 
 These are aggregate, profile-level summaries with no patient identifiers. They are sufficient to reproduce all primary and secondary correlation results and all four figures.
+
+See [ATTRIBUTION.md](ATTRIBUTION.md) for full license details and attribution for each file.
 
 ## What is NOT included
 

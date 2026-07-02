@@ -22,12 +22,15 @@ Outputs (written to repo root):
     figures/fig4_genie_replication.pdf/.png
 
 Data requirements:
-    data/merged_ddg_ttnt.csv              — included in repo
-    data/genie_bpc_profile_summary.csv    — included in repo
+    data/merged_ddg_ttnt.csv              — included in repo (CC BY-NC-ND 4.0; non-commercial only)
+    data/genie_bpc_profile_summary.csv    — included in repo (CC BY-NC-ND 4.0; non-commercial only)
+    data/ddg_values.csv                   — included in repo (MIT; authors' own ΔΔG computations)
     data/genie_bpc_cohort.csv             — NOT included (patient-level); download from
                                             Synapse syn27056697 and place here to reproduce
                                             Supplementary Table 4 (treatment-line analysis).
                                             All other results reproduce without this file.
+
+See data/ATTRIBUTION.md for full license details.
 """
 
 import json
@@ -509,6 +512,17 @@ def fig4_genie(genie_pairs, rho, pval):
                  "v1.0 binding-pocket profiles, GENIE BPC NSCLC v2.0-public",
                  fontsize=11, fontweight="bold")
     ax.grid(True, alpha=0.25)
+
+    # Drug legend (same convention as Figure 1)
+    drugs_present = list({p["drug"] for p in genie_pairs})
+    drug_handles = [
+        plt.scatter([], [], marker=DRUG_MARKERS[d], c=DRUG_COLORS[d],
+                    s=90, edgecolors="k", linewidths=0.8, label=DRUG_LABELS[d])
+        for d in ["osimertinib", "erlotinib", "afatinib"] if d in drugs_present
+    ]
+    ax.legend(handles=drug_handles, fontsize=9, loc="upper left",
+              framealpha=0.9, edgecolor="#ccc")
+
     # Expand y-axis top so no label is clipped at the border
     ymin, ymax = ax.get_ylim()
     ax.set_ylim(ymin, ymax * 1.12)
