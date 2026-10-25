@@ -1,0 +1,62 @@
+{
+  "model_1_unadjusted": {
+    "name": "Unadjusted",
+    "formula": "duration ~ ddg",
+    "clustering": "patient_id",
+    "ddg_hr": 1.094746072906609,
+    "ddg_ci_lower": 0.9891045402994231,
+    "ddg_ci_upper": 1.2116706731339442,
+    "ddg_p_value": 0.08039968355147464,
+    "n": 576,
+    "n_events": 404
+  },
+  "model_2_primary_adjusted": {
+    "name": "Primary Adjusted",
+    "formula": "duration ~ ddg + line_num + age + sex_male + stage_4",
+    "clustering": "patient_id",
+    "ddg_hr": 1.1618432629284128,
+    "ddg_ci_lower": 1.0518998759432683,
+    "ddg_ci_upper": 1.2832778085477627,
+    "ddg_p_value": 0.003100916721763775,
+    "n": 576,
+    "n_events": 404,
+    "schoenfeld_ph_test_p_ddg": 0.0911628924863368,
+    "percent_change_vs_unadjusted": 6.129018562602121,
+    "covariates_used": [
+      "line_num",
+      "age",
+      "sex_male",
+      "stage_4"
+    ]
+  },
+  "model_3_line_sensitivity_a": {
+    "name": "Line Sensitivity A (Adjusted with line)",
+    "formula": "duration ~ ddg + line_num + age + sex_male + stage_4",
+    "clustering": "patient_id",
+    "note": "Same as Model 2 - primary adjusted model",
+    "ddg_hr": 1.1618432629284128,
+    "ddg_ci_lower": 1.0518998759432683,
+    "ddg_ci_upper": 1.2832778085477627,
+    "ddg_p_value": 0.003100916721763775,
+    "n": 576,
+    "n_events": 404
+  },
+  "model_4_line_sensitivity_b": {
+    "name": "Line Sensitivity B (Stratified by line group)",
+    "formula": "duration ~ ddg (stratified by line group)",
+    "clustering": "patient_id",
+    "ddg_hr": 1.0994844415462353,
+    "ddg_ci_lower": 0.9951712053737765,
+    "ddg_ci_upper": 1.2147317272390317,
+    "ddg_p_value": 0.06221093978007813,
+    "n": 576,
+    "n_events": 404,
+    "strata": "line_group (frontline vs later)"
+  },
+  "interpretation": {
+    "group_level_correlation": "\u03c1 = -0.673 (more negative \u0394\u0394G \u2192 longer TTNT)",
+    "confirming_direction_is": "HR > 1 per +1 kcal/mol \u0394\u0394G (because the group-level association is negative)",
+    "observed_patient_level_primary": "HR = 1.1618 (p=0.0031)",
+    "direction_agreement": "AGREE (confirming): HR>1 per +1 kcal/mol \u0394\u0394G means weaker binding shortens TTNT \u2014 equivalently stronger (more negative) binding lengthens TTNT \u2014 the same direction as the group-level \u03c1=-0.673."
+  }
+}

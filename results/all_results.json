@@ -1,15 +1,15 @@
 {
   "v1_0": {
     "n": 11,
-    "rho": -0.664,
-    "pval": 0.026,
-    "ci_lo": -0.876,
-    "ci_hi": -0.151,
+    "rho": -0.673,
+    "pval": 0.023,
+    "ci_lo": -0.886,
+    "ci_hi": -0.174,
     "pairs": [
       {
         "profile": "Ex19del",
         "drug": "erlotinib",
-        "ddg": -0.417,
+        "ddg": -1.98,
         "ttnt": 4.83,
         "n": 216
       },
@@ -94,10 +94,10 @@
   },
   "v3_0": {
     "n": 15,
-    "rho": -0.632,
-    "pval": 0.011,
-    "ci_lo": -0.824,
-    "ci_hi": -0.231
+    "rho": -0.643,
+    "pval": 0.01,
+    "ci_lo": -0.841,
+    "ci_hi": -0.251
   },
   "v3_0_osi": {
     "n": 11,
@@ -112,88 +112,104 @@
       "n": 10,
       "rho": -0.697,
       "pval": 0.025,
-      "delta_rho": -0.033
+      "delta_rho": -0.024
     },
     {
       "removed": "Ex19del + osimertinib",
       "n": 10,
-      "rho": -0.636,
-      "pval": 0.048,
-      "delta_rho": 0.027
+      "rho": -0.648,
+      "pval": 0.043,
+      "delta_rho": 0.024
     },
     {
       "removed": "G719X + osimertinib",
       "n": 10,
       "rho": -0.697,
       "pval": 0.025,
-      "delta_rho": -0.033
+      "delta_rho": -0.024
     },
     {
       "removed": "L858R+T790M + osimertinib",
       "n": 10,
-      "rho": -0.6,
-      "pval": 0.067,
-      "delta_rho": 0.064
+      "rho": -0.612,
+      "pval": 0.06,
+      "delta_rho": 0.061
     },
     {
       "removed": "G719X+S768I + osimertinib",
       "n": 10,
-      "rho": -0.636,
-      "pval": 0.048,
-      "delta_rho": 0.027
+      "rho": -0.648,
+      "pval": 0.043,
+      "delta_rho": 0.024
     },
     {
       "removed": "G719X+L861Q + osimertinib",
       "n": 10,
-      "rho": -0.673,
-      "pval": 0.033,
-      "delta_rho": -0.009
+      "rho": -0.685,
+      "pval": 0.029,
+      "delta_rho": -0.012
     },
     {
       "removed": "G719X+L861Q + afatinib",
       "n": 10,
-      "rho": -0.636,
-      "pval": 0.048,
-      "delta_rho": 0.027
+      "rho": -0.648,
+      "pval": 0.043,
+      "delta_rho": 0.024
     },
     {
       "removed": "Ex19del+T790M + osimertinib",
       "n": 10,
-      "rho": -0.636,
-      "pval": 0.048,
-      "delta_rho": 0.027
+      "rho": -0.648,
+      "pval": 0.043,
+      "delta_rho": 0.024
     },
     {
       "removed": "Ex19delV3 + osimertinib",
       "n": 10,
-      "rho": -0.636,
-      "pval": 0.048,
-      "delta_rho": 0.027
+      "rho": -0.648,
+      "pval": 0.043,
+      "delta_rho": 0.024
     },
     {
       "removed": "Ex19delV4 + osimertinib",
       "n": 10,
-      "rho": -0.685,
-      "pval": 0.029,
-      "delta_rho": -0.021
+      "rho": -0.697,
+      "pval": 0.025,
+      "delta_rho": -0.024
     },
     {
       "removed": "Ex19delV5 + osimertinib",
       "n": 10,
-      "rho": -0.685,
-      "pval": 0.029,
-      "delta_rho": -0.021
+      "rho": -0.697,
+      "pval": 0.025,
+      "delta_rho": -0.024
     }
   ],
   "genie_replication": {
     "n": 7,
-    "rho": 0.357,
-    "pval": 0.432,
+    "rho": 0.143,
+    "pval": 0.76,
+    "ci_lo": -0.75,
+    "ci_hi": 0.75,
+    "independent_5": {
+      "n": 5,
+      "rho": -0.1,
+      "pval": 0.873,
+      "ci_lo": null,
+      "ci_hi": null,
+      "profiles": [
+        "Ex19del",
+        "Ex19del",
+        "Ex19del+T790M",
+        "G719X",
+        "L858R+T790M"
+      ]
+    },
     "pairs": [
       {
         "profile": "Ex19del",
         "drug": "erlotinib",
-        "ddg": -0.417,
+        "ddg": -1.98,
         "ttnt": 9.424342105263161,
         "n": 64
       },

@@ -694,14 +694,31 @@ def main():
 
     # ── GENIE BPC Replication ────────────────────────────────────────────────
     genie_pairs = load_genie_replication(v1_pairs)
+    genie_ci_lo = genie_ci_hi = None
+    genie5 = None  # 5 fully-independent pairs (exclude profiles sourced from GENIE into the primary set)
     if genie_pairs:
         xg = [p["ddg"] for p in genie_pairs]
         yg = [p["ttnt"] for p in genie_pairs]
-        rho_g, p_g = stats.spearmanr(xg, yg)
+        # Use the same bootstrap helper as every other CI in this paper (reproducibility: C2/M2).
+        rho_g, p_g, genie_ci_lo, genie_ci_hi = spearman_with_ci(xg, yg)
         print(f"\nGENIE BPC Replication (v1.0 profiles, n={len(genie_pairs)})")
-        print(f"  ρ = {rho_g:+.3f},  p = {p_g:.3f}")
+        print(f"  ρ = {rho_g:+.3f},  p = {p_g:.3f},  95% CI [{genie_ci_lo:.3f}, {genie_ci_hi:.3f}]")
         for p in genie_pairs:
             print(f"  {p['profile']:30s}  {p['drug']:15s}  ddg={p['ddg']:+7.3f}  ttnt={p['ttnt']:.2f} mo  n={p['n']}")
+        # 5 fully-independent pairs: drop Ex19delV3/V5 (their TTNT was sourced from GENIE into the primary set)
+        GENIE_SOURCED = {"Ex19delV3", "Ex19delV5"}
+        ind = [p for p in genie_pairs if p["profile"] not in GENIE_SOURCED]
+        if len(ind) >= 3:
+            xi = [p["ddg"] for p in ind]; yi = [p["ttnt"] for p in ind]
+            rho5, p5, ci5_lo, ci5_hi = spearman_with_ci(xi, yi)
+            # At n=5 the bootstrap can degenerate (too few distinct resampled rho values);
+            # emit null rather than NaN so the JSON stays strictly valid.
+            def _j(v):
+                return None if v is None or not np.isfinite(v) else round(float(v), 3)
+            genie5 = {"n": len(ind), "rho": _j(rho5), "pval": _j(p5),
+                      "ci_lo": _j(ci5_lo), "ci_hi": _j(ci5_hi),
+                      "profiles": [p["profile"] for p in ind]}
+            print(f"  5 fully-independent pairs: ρ = {rho5:+.3f}, p = {p5:.3f}, 95% CI [{ci5_lo:.3f}, {ci5_hi:.3f}]")
     else:
         rho_g, p_g = None, None
         print("\nGENIE BPC Replication: no qualifying pairs (all already in primary dataset)")
@@ -733,6 +750,9 @@ def main():
             "n": len(genie_pairs),
             "rho": round(rho_g, 3) if rho_g is not None else None,
             "pval": round(p_g, 3) if p_g is not None else None,
+            "ci_lo": round(genie_ci_lo, 3) if genie_ci_lo is not None else None,
+            "ci_hi": round(genie_ci_hi, 3) if genie_ci_hi is not None else None,
+            "independent_5": genie5,
             "pairs": [{"profile": p["profile"], "drug": p["drug"],
                        "ddg": p["ddg"], "ttnt": p["ttnt"], "n": p["n"]} for p in genie_pairs],
         },

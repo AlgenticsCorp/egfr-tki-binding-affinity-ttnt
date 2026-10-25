@@ -1,7 +1,7 @@
 profile,drug,ddg_kcal_mol,notes
-Ex19del,erlotinib,-0.417,v1.0 binding-pocket scope
+Ex19del,erlotinib,-1.980,v1.0 binding-pocket scope
 Ex19del,osimertinib,-5.050,v1.0 binding-pocket scope
-L858R,erlotinib,0.018,v3.0 all-sensitising scope only
+L858R,erlotinib,-1.545,v3.0 all-sensitising scope only
 L858R,osimertinib,-2.586,v3.0 all-sensitising scope only
 G719X,osimertinib,-1.334,v1.0 binding-pocket scope
 G719X,afatinib,-5.033,excluded (n=4 < minimum threshold)
